@@ -1,42 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dev Portfolio</title>
+
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 40px;
+      margin: 40px auto;
       max-width: 900px;
+      line-height: 1.6;
+      color: #222;
     }
+
     header {
       margin-bottom: 40px;
     }
+
     h1 {
       margin-bottom: 5px;
     }
+
     .section {
-      margin-bottom: 30px;
+      margin-bottom: 35px;
     }
+
     .card {
-      padding: 15px;
       border: 1px solid #ddd;
       border-radius: 8px;
+      padding: 15px;
       margin-top: 10px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 3px 8px;
+      font-size: 12px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-right: 5px;
+      margin-top: 5px;
+    }
+
+    a {
+      color: #0366d6;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
+
 <body>
 
 <header>
   <h1>Dev Portfolio</h1>
-  <p>QA Automation - DevOps Learning - Future Embedded Systems Development</p>
+  <p>QA Automation • DevOps • Cloud Deployment</p>
 </header>
 
 <div class="section">
   <h2>About</h2>
   <p>
-    I’m building experience in automation testing, CI/CD pipelines, and cloud deployment workflows,
-    with future focus on embedded systems and low-level development.
+    I build and deploy automated systems using CI/CD pipelines, cloud infrastructure, and testing frameworks.
+    Currently focused on Azure, GitHub Actions, and Playwright automation.
   </p>
 </div>
 
@@ -44,19 +73,56 @@
   <h2>Projects</h2>
 
   <div class="card">
-    <h3>Hytale Mod Project</h3>
-    <p>Game mod development exploration and experimentation.</p>
+    <h3>CI/CD Pipeline (Azure + GitHub Actions)</h3>
+    <p>
+      Automated deployment pipeline with GitHub Actions deploying to Azure Static Web Apps,
+      including Playwright test validation before deployment.
+    </p>
+    <div>
+      <span class="tag">GitHub Actions</span>
+      <span class="tag">Azure</span>
+      <span class="tag">CI/CD</span>
+      <span class="tag">Playwright</span>
+    </div>
+    <p><a href="https://github.com/yourusername">View GitHub</a></p>
   </div>
 
   <div class="card">
-    <h3>Playwright CI/CD Pipeline</h3>
-    <p>Automated testing integrated into GitHub Actions + Azure Static Web Apps deployment.</p>
+    <h3>Playwright QA Automation</h3>
+    <p>
+      Automated browser testing integrated into CI pipeline to validate deployment before production release.
+    </p>
+    <div>
+      <span class="tag">Playwright</span>
+      <span class="tag">QA</span>
+      <span class="tag">Testing</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Hytale Mod Development</h3>
+    <p>
+      Game mod development project exploring scripting, logic systems, and gameplay modifications.
+    </p>
+    <div>
+      <span class="tag">Game Dev</span>
+      <span class="tag">Java/Mods</span>
+    </div>
   </div>
 </div>
 
 <div class="section">
+  <h2>Skills</h2>
+  <p>
+    Azure • GitHub Actions • Playwright • Selenium • AWS (basic) • CI/CD • Testing Automation
+  </p>
+</div>
+
+<div class="section">
   <h2>Contact</h2>
-  <p>GitHub: https://github.com/CrunchyByte</p>
+  <p>
+    GitHub: <a href="https://github.com/CrunchyByte">CrunchyByte</a>
+  </p>
 </div>
 
 </body>
