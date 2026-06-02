@@ -10,31 +10,11 @@ on:
       - main
 
 jobs:
-  test_job:
-    runs-on: ubuntu-latest
-    name: Playwright Tests
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Install Playwright browsers
-        run: npx playwright install --with-deps
-
-      - name: Run Playwright tests
-        run: npm test
-
   build_and_deploy_job:
-    needs: test_job
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
     name: Build and Deploy Job
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+
     steps:
       - uses: actions/checkout@v3
         with:
@@ -52,6 +32,30 @@ jobs:
           api_location: ""
           output_location: "/"
           skip_app_build: true
+
+  test_job:
+    runs-on: ubuntu-latest
+    name: Playwright Tests
+    needs: build_and_deploy_job
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      - name: Run Playwright tests
+        env:
+          BASE_URL: https://zealous-field-04ce67510.7.azurestaticapps.net
+        run: npm test
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
