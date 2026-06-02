@@ -54,7 +54,7 @@ jobs:
 
       - name: Run Playwright tests
         env:
-          BASE_URL: https://zealous-field-04ce67510.7.azurestaticapps.net
+          BASE_URL: ${{ secrets.BASE_URL }}
         run: npm test
 
   close_pull_request_job:
